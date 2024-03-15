@@ -1,0 +1,9 @@
+-- Select  data that we are going to be using
+
+SELECT Dea.location, Dea.date, Dea.total_cases, Dea.new_cases, Dea.total_deaths, Vac.population
+From portofoliocoviddata.CovidProtofolio.Covid_Deaths as Dea
+join portofoliocoviddata.CovidProtofolio.Covid_Vaccines Vac 
+    on Dea.iso_code = Vac.iso_code and Dea.date = Vac.date and Dea.location = Vac.location
+order by 1,2
+
+
